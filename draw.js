@@ -1,8 +1,10 @@
 const canvas = document.getElementById("canvas1");
 const context = canvas.getContext("2d");
+const scoreElem = document.getElementById('score');
 
-const CANVAS_WIDTH = canvas.width = 50;
-const CANVAS_HEIGHT = canvas.height = 50;
+
+const CANVAS_WIDTH = canvas.width = 150;
+const CANVAS_HEIGHT = canvas.height = 150;
 
 var ballSize = 5;
 
@@ -12,6 +14,8 @@ var placeTop = canvas.height - 30;
 
 var moveSide = 2;
 var moveTop = -2;
+
+
 
 function clickCounter (xmoues, ymoues){
    const distance =
@@ -26,6 +30,21 @@ function clickCounter (xmoues, ymoues){
     return false;
    }
 }
+
+canvas.addEventListener('click', (xmoues, ymoues) =>{
+        const distance =
+        Math.sqrt(
+        ((xmoues - this.placeSide) * (xmoues - this.placeSide))
+        +
+        ((ymoues - this.placeTop) * (ymoues - this.placeTop))
+        )
+        if (distance < ballSize){
+         return true;
+        }else {
+         return false;
+        }
+     
+});
 
 function drawingBall() {
     clickCounter();
@@ -50,10 +69,16 @@ function moveBall() {
     placeSide += moveSide;
     placeTop += moveTop;
 }
+
+
+
+
+
+
 canvas.addEventListener('click', (event) =>{
     const rect = canvas.getBoundingClientRect();
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
     console.log(clickCounter(x, y))
 })
-setInterval(drawingBall, 19)
+setInterval(moveBall, 19)
