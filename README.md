@@ -18,4 +18,8 @@ end3r
 fscholz
 rabimba;
 
-//
+// This video helped me understand how to use the click eventlisterner which helped a creat a counter
+https://www.youtube.com/watch?v=qwi2Gb6QCDo
+
+// in canvase becasues your drawing its hard to spec what you want clicked or not and with this video i got a understand on that worked
+https://www.youtube.com/watch?v=xbdJf9MRL7A
