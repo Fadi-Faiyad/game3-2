@@ -1,113 +1,94 @@
 const canvas = document.getElementById("canvas1");
 const context = canvas.getContext("2d");
-const scoreElem = document.getElementById('score');
-const xtime = document.getElementById('timer')
+const scoreH = document.getElementById('score');
+const tim = document.getElementById('timer');
 
+const CANVAS_WIDTH = canvas.width = 500;
+const CANVAS_HEIGHT = canvas.height = 500;
 
-const CANVAS_WIDTH = canvas.width = 150;
-const CANVAS_HEIGHT = canvas.height = 150;
-
-var ballSize = 15;
-
-var placeSide = canvas.width / 2;
-
-var placeTop = canvas.height - 30;
-
-var moveSide = 2;
-var moveTop = -2;
+let ballSize = 10;
+let placeSide = canvas.width / 2;
+let placeTop = canvas.height - 30;
+let moveSide = 2;
+let moveTop = -2;
 
 let score = 0;
 let timeLeft = 10; // Number of seconds before the game ends
 
-
-
-function clickCounter (xmoues, ymoues){
-   const distance =
-   Math.sqrt(
-   ((xmoues - this.placeSide) * (xmoues - this.placeSide))
-   +
-   ((ymoues - this.placeTop) * (ymoues - this.placeTop))
-   )
-   if (distance < ballSize){
-    return true;
-   }else {
-    return false;
-   }
+function updateScore() {
+  scoreH.innerText = `Score: ${score}`;
 }
 
-canvas.addEventListener('click', (xmoues, ymoues) =>{
-        const distance =
-        Math.sqrt(
-        ((xmoues - this.placeSide) * (xmoues - this.placeSide))
-        +
-        ((ymoues - this.placeTop) * (ymoues - this.placeTop))
-        )
-        if (distance < ballSize){
-         return true;
-        }else {
-         return false;
-        }
-     
-});
-// Function to update the timer
-function updateTimer() {
-    timeLeft--;
-    console.log(`Time left: ${timeLeft} seconds`);
-    
-    // Check if time has run out
-    if (timeLeft === 0) {
-      console.log(`Game over! Your score is ${score}`);
-      clearInterval(timer);
-    }
+let clickCount = 0;
+
+function clickCounter(x, y) {
+  const distance = Math.sqrt((x - placeSide) ** 2 + (y - placeTop) ** 2);
+  if (distance < ballSize) {
+    clickCount++;
+    score += 1;
+    timeLeft += 5;
+    updateScore();
+    scoreH.innerText = `Score: ${score} (Clicks: ${clickCount})`;
+    return true;
+  } else {
+    return false;
   }
+}
+
+canvas.addEventListener('click', (event) => {
+  const rect = canvas.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  console.log(clickCounter(x, y));
+});
 
 function drawingBall() {
-    clickCounter();
-    context.beginPath();
-    context.arc(placeSide, placeTop, ballSize, 0, Math.PI * 2);
-    context.fillStyle = "red";
-    context.fill();
-    context.closePath();
-
+  context.beginPath();
+  context.arc(placeSide, placeTop, ballSize, 0, Math.PI * 2);
+  context.fillStyle = "red";
+  context.fill();
+  context.closePath();
 }
 
 function moveBall() {
-    context.clearRect(0, 0, canvas.width, canvas.height);
-    drawingBall();
-    if (placeSide + moveSide > canvas.width-ballSize || placeSide + moveSide < ballSize){
-        moveSide = -moveSide;
-
-    }
-    if (placeTop + moveTop > canvas.height-ballSize || placeTop + moveTop < ballSize){
-        moveTop = -moveTop;
-    }
-    placeSide += moveSide;
-    placeTop += moveTop;
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  drawingBall();
+  if (placeSide + moveSide > canvas.width - ballSize || placeSide + moveSide < ballSize) {
+    moveSide = -moveSide;
+  }
+  if (placeTop + moveTop > canvas.height - ballSize || placeTop + moveTop < ballSize) {
+    moveTop = -moveTop;
+  }
+  placeSide += moveSide;
+  placeTop += moveTop;
 }
 
-
-
-
-
-
-
-canvas.addEventListener('click', (event) =>{
-    const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
-    console.log(clickCounter(x, y))
-})
-const timer = setInterval(updateTimer, 1000);
-
-function ballClickHandler() {
-    score += 1;
-    timeLeft += 5;
-    console.log(`You clicked the ball! Your score is now ${score}`);
-  }
+function updateTimer() {
+  timeLeft--;
+  tim.innerText = `Time left: ${timeLeft} seconds`;
   
-  // Add a click event listener to the ball
-  const ball = document.querySelector('#canvas1'); // Replace with your ball selector
-  ball.addEventListener('click', ballClickHandler);
+  if (timeLeft === 0) {
+    clearInterval(timer);
+    canvas.removeEventListener('click', clickHandler);
+    clearInterval(ballInterval);
+    context.clearRect(0, 0, canvas.width, canvas.height);
+    context.font = "30px Arial";
+    context.textAlign = "center";
+    context.fillText(`Game over! Your score is ${score} (Clicks: ${clickCount})`, canvas.width / 2, canvas.height / 2);
+  }
+}
 
+function clickHandler(event) {
+  const rect = canvas.getBoundingClientRect();
+  const x = event.clientX - rect.left;
+  const y = event.clientY - rect.top;
+  clickCounter(x, y);
+}
 
-setInterval(moveBall, 19)
+canvas.addEventListener('click', clickHandler);
+
+const ballInterval = setInterval(moveBall, 19);
+
+// Start the timer
+const timer = setInterval(updateTimer, 1000);
+updateScore();  // Update the score once at the beginning
