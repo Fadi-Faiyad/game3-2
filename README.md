@@ -23,3 +23,7 @@ https://www.youtube.com/watch?v=qwi2Gb6QCDo
 
 // in canvase becasues your drawing its hard to spec what you want clicked or not and with this video i got a understand on how that worked
 https://www.youtube.com/watch?v=xbdJf9MRL7A
+
+
+// i used this site for the images i couldnt find the arthue tho    
+https://www.peakpx.com/en/search?q=anime+starry+sky
