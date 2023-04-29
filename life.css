@@ -1,57 +1,65 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-#canvas1{
-    border: 5px solid black;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 900px;
-    height: 900px;
-}
- /* Center align the text */
- body {
-    text-align: center;
-  }
-  
-  /* Style for the heading */
-  h1 {
-    font-size: 36px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-  }
-  
-  /* Style for the rules */
-  p {
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: left;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 20px;
-  }
-  
-  /* Style for the first rule */
-  .rule1 {
-    background-color: #FFF2CC;
-    border-left: 10px solid #FFC107;
-  }
-  
-  /* Style for the second rule */
-  .rule2 {
-    background-color: #D6EAF8;
-    border-left: 10px solid #3498DB;
-  }
 
-  #next-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-  }
+#canvas1 {
+  border: 5px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  text-align: center;
+  background-image: url('images.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  
+}
+
+h1 {
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: #3498DB
+}
+
+p {
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: left;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+
+}
+
+.rule1 {
+  background-color: #FFF2CC;
+  background-image: url('images.jpg');
+  border-left: 10px solid #FFC107;
+  color: #3498DB
+}
+
+.rule2 {
+  background-color: #D6EAF8;
+  background-image: url('images.jpg');
+  border-left: 10px solid #3498DB;
+  color: #3498DB
+}
+
+#next-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}

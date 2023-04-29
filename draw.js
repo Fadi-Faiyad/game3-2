@@ -3,10 +3,10 @@ const context = canvas.getContext("2d");
 const scoreH = document.getElementById('score');
 const tim = document.getElementById('timer');
 
-const CANVAS_WIDTH = canvas.width = 500;
-const CANVAS_HEIGHT = canvas.height = 500;
+const CANVAS_WIDTH = canvas.width = 150;
+const CANVAS_HEIGHT = canvas.height = 150;
 
-let ballSize = 10;
+let ballSize = 25;
 let placeSide = canvas.width / 2;
 let placeTop = canvas.height - 30;
 let moveSide = 2;
