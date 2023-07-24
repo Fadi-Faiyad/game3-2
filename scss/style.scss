@@ -1,0 +1,67 @@
+@import '.variables';
+@import '.mixins';
+@import '.function';
+
+
+#canvas1 {
+  border: $border-ready;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  text-align: center;
+  background-image: url('/image.jpg');
+  background-color: $background;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#timer{
+  font-size: $font-size;
+
+  color: rgb(123, 195, 243)
+}
+
+h1 {
+  font-size: $header-font-size;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  margin-top: 50px;
+  margin-bottom: 30px;
+  color: $hint-text-color;
+}
+
+p {
+  @include perfectText
+}
+
+.rule1 {
+  @include rulesOfGame;
+  &.hover{
+    font-size: 15px;
+  }
+}
+
+.rule2 {
+  @include rulesOfGame;
+  &.hover{
+    font-size: 15px;
+  }
+}
+
+button {
+  position: fixed;
+  background-color: $hint-background-color;
+  color: $hint-text-color;
+  align-self: center;
+  border-radius: 10px;
+  font-size: $button-font-size;
+  &.hover{
+    background-color: red;
+  }
+}

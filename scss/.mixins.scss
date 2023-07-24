@@ -1,0 +1,19 @@
+@import '.variables';
+
+@mixin rulesOfGame {
+    background-color: $hint-text-color;
+    background-image: url('images.jpg');
+    border-left: 10px solid #f1f1ee;
+    color: $hint-background-color;
+}
+
+@mixin perfectText{
+    font-size: $font-size;
+    margin-bottom: 20px;
+    text-align: left;
+    font-family: $font-family;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+}

@@ -1,0 +1,7 @@
+@function button-color($background, $val) {
+  @return ( $background + $val );
+}
+@function perfect-border($width, $value) {
+    // this well be handy in getting the same nice border
+    @return ( $width + $value)
+}
