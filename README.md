@@ -1,4 +1,4 @@
-# game3-2
+# Bouncing ball
 //This is a simple game where you have a timer that ticks down, and you can click the bouncing ball to add time to your timer and score points.
 
 //How to Play
