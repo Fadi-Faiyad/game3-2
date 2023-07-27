@@ -11,7 +11,7 @@
 //Acknowledgments
 //I would like to acknowledge the following resources that helped me in creating this game:
 
-/M/DN Web Docs - 2D Breakout Game Pure JavaScript Tutorial - This guide from MDN Web Docs helped me learn how to use the HTML5 Canvas to draw and create the walls and bouncing ball in the game.
+//MDN Web Docs - 2D Breakout Game Pure JavaScript Tutorial - This guide from MDN Web Docs helped me learn how to use the HTML5 Canvas to draw and create the walls and bouncing ball in the game.
 
 //YouTube - Click Event Listener Tutorial - This video tutorial helped me understand how to use the click event listener, which allowed me to implement the ball-clicking mechanism in the game.
 
