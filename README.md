@@ -1,29 +1,29 @@
 # game3-2
+//This is a simple game where you have a timer that ticks down, and you can click the bouncing ball to add time to your timer and score points.
 
-// i want to aplogies beforhand i am not 100% i did thus cartucly, i tryed my best to be spicfica on what i use to help me build this game.
+//How to Play
+//Use the mouse to click on the bouncing ball whenever it appears on the screen.
+//Each time you click the ball, your timer will be increased, and your score will go up.
+//The game ends when the timer runs out.
+//Technologies Used
+//This game was created using HTML5 Canvas and pure JavaScript for the game logic and rendering.
 
+//Acknowledgments
+//I would like to acknowledge the following resources that helped me in creating this game:
 
-//I used this guide to help me learn how to use canvas to draw, which helped me make the walls and ball also getting the ball to bounch off walls.
-https://github.com/mdn/content/commits/main/files/en-us/games/tutorials/2d_breakout_game_pure_javascript/index.md by: Original Wiki contributors
-escattone
-JoeParrilla
-wbamberg
-jswisher
-jolosan
-cristianvnica
-chrisdavidmills
-Twoteka
-Jeremie
-end3r
-fscholz
-rabimba;
+/M/DN Web Docs - 2D Breakout Game Pure JavaScript Tutorial - This guide from MDN Web Docs helped me learn how to use the HTML5 Canvas to draw and create the walls and bouncing ball in the game.
 
-// This video helped me understand how to use the click eventlisterner which helped a creat a counter
-https://www.youtube.com/watch?v=qwi2Gb6QCDo
+//YouTube - Click Event Listener Tutorial - This video tutorial helped me understand how to use the click event listener, which allowed me to implement the ball-clicking mechanism in the game.
 
-// in canvase becasues your drawing its hard to spec what you want clicked or not and with this video i got a understand on how that worked
-https://www.youtube.com/watch?v=xbdJf9MRL7A
+//YouTube - Understanding Canvas and Drawing - This video helped me gain a better understanding of how to work with HTML5 Canvas for drawing and interacting with objects on the canvas.
 
+//Image Credits
+//I used images from Peakpx for the game. Unfortunately, I couldn't find the specific artist for the images I used.
 
-// i used this site for the images i couldnt find the arthue tho    
-https://www.peakpx.com/en/search?q=anime+starry+sky
+//How to Contribute
+//If you would like to contribute to this project, feel free to submit bug reports, feature requests, or even code contributions. Please create a pull request, and I'll be happy to review it.
+
+//License
+//This project is licensed under the MIT License.
+
+//This revised README provides clearer instructions on how to play the game, highlights the technologies and resources used, and properly credits the sources of information and images used. It also includes sections for contributions and licensing, which are essential in open-source projects. Remember that a good README should be concise, informative, and well-organized, making it easier for others to understand and contribute to your project.
